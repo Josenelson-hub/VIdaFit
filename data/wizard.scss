@@ -146,30 +146,8 @@ body {
 }
 
 // =====================
-// BUTTON
+// OBJECTIVES
 // =====================
-.next-btn {
-  margin-top: 18px;
-  width: 100%;
-  padding: 14px;
-  border: none;
-  border-radius: 12px;
-  background: linear-gradient(90deg, #4ade80, #22c55e);
-  color: #0b1220;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.2s;
-
-  &:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 10px 25px rgba(34, 197, 94, 0.25);
-  }
-
-  &:active {
-    transform: scale(0.98);
-  }
-}
-
 .objective-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -205,6 +183,9 @@ body {
   }
 }
 
+// =====================
+// ACTIONS / BUTTONS
+// =====================
 .actions {
   display: flex;
   justify-content: space-between;
@@ -231,15 +212,36 @@ body {
 
 .next-btn {
   flex: 2;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #4ade80, #22c55e);
+  color: #0b1220;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 25px rgba(34, 197, 94, 0.25);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
 }
 
+// =====================
+// RESULT
+// =====================
 .result-card {
   margin-top: 10px;
   padding: 18px;
   border-radius: 16px;
   background: linear-gradient(145deg, #111a2e, #0e1729);
   border: 1px solid #24324a;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
 .result-hero {
@@ -294,24 +296,9 @@ body {
   }
 }
 
-.cta-btn {
-  width: 100%;
-  margin-top: 16px;
-  padding: 14px;
-  border: none;
-  border-radius: 12px;
-  background: linear-gradient(90deg, #4ade80, #22c55e);
-  color: #0b1220;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.2s;
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(34, 197, 94, 0.3);
-  }
-}
-
+// =====================
+// PLANS
+// =====================
 .plans {
   display: grid;
   grid-template-columns: 1fr;
@@ -394,6 +381,53 @@ body {
   }
 }
 
-.cta-btn {
-  margin-top: 18px;
+// =====================
+// RESPONSIVE (MOBILE FIX)
+// =====================
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .full {
+    grid-column: span 1;
+  }
+
+  .progress {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .line {
+    width: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .header h2 {
+    font-size: 18px;
+  }
+
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .next-btn,
+  .back-btn {
+    width: 100%;
+    flex: unset;
+  }
+
+  .step p {
+    display: none;
+  }
 }
