@@ -70,6 +70,7 @@ nav a:hover {
   background: #7bf14e;
   border: none;
   color: black;
+  text-decoration: none;
   padding: 12px 20px;
   border-radius: 10px;
   cursor: pointer;
