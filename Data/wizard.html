@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VidaFit - Wizard</title>
+  <link rel="stylesheet" href="wizard.css">
+</head>
+
+<body>
+
+<div class="wizard-container">
+
+  <!-- PROGRESS -->
+  <div class="progress">
+    <div class="step active">
+      <span>1</span>
+      <p>Sobre você</p>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="step">
+      <span>2</span>
+      <p>Objetivo</p>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="step">
+      <span>3</span>
+      <p>Orçamento</p>
+    </div>
+  </div>
+
+  <!-- CARD -->
+  <div class="card">
+
+    <!-- STEP 0 - SOBRE VOCÊ -->
+    <div data-step="0">
+
+      <div class="header">
+        <h2>Sobre você</h2>
+        <p>Vamos começar com algumas informações básicas.</p>
+      </div>
+
+      <div class="form-grid">
+
+        <div class="field full">
+          <label>Nome</label>
+          <input id="name" type="text" placeholder="João da Silva">
+        </div>
+
+        <div class="field">
+          <label>Idade</label>
+          <input id="age" type="number" placeholder="25">
+        </div>
+
+        <div class="field">
+          <label>Gênero</label>
+          <select>
+            <option>Masculino</option>
+            <option>Feminino</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Peso (kg)</label>
+          <input id="weight" type="number" placeholder="70">
+        </div>
+
+        <div class="field">
+          <label>Altura (cm)</label>
+          <input id="height" type="number" placeholder="175">
+        </div>
+
+        <div class="field full">
+          <label>Nível de atividade física</label>
+          <select>
+            <option>Sedentário</option>
+            <option>Moderado</option>
+            <option>Ativo</option>
+          </select>
+        </div>
+
+      </div>
+    </div>
+
+<!-- STEP 1 - OBJETIVO (FUNCIONAL) -->
+<div data-step="1" style="display:none">
+
+  <div class="header">
+    <h2>Seu objetivo</h2>
+    <p>Escolha o foco principal do seu plano</p>
+  </div>
+
+  <div class="objective-grid">
+
+    <label class="objective">
+      <input type="radio" name="objective" value="cutting">
+      <div class="box">
+        🔥<br>
+        <strong>Definição</strong>
+        <p>Perder gordura</p>
+      </div>
+    </label>
+
+    <label class="objective">
+      <input type="radio" name="objective" value="maintenance">
+      <div class="box">
+        ⚖️<br>
+        <strong>Manutenção</strong>
+        <p>Equilibrar peso</p>
+      </div>
+    </label>
+
+    <label class="objective">
+      <input type="radio" name="objective" value="bulking">
+      <div class="box">
+        💪<br>
+        <strong>Hipertrofia</strong>
+        <p>Ganhar massa</p>
+      </div>
+    </label>
+
+  </div>
+
+</div>
+
+    <!-- STEP 2 - ORÇAMENTO -->
+    <div data-step="2" style="display:none">
+
+      <div class="header">
+        <h2>Orçamento mensal</h2>
+        <p>Quanto você pretende investir na sua alimentação?</p>
+      </div>
+
+      <div class="field full">
+        <label>Orçamento (R$)</label>
+        <input id="budget" type="number" placeholder="Ex: 500">
+      </div>
+
+    </div>
+
+<div data-step="3" style="display:none">
+
+  <div class="header">
+    <h2>Seu plano personalizado está pronto</h2>
+    <p>Baseado no seu perfil, criamos sua estratégia ideal</p>
+  </div>
+
+  <div id="result"></div>
+
+</div>
+
+    <!-- ACTIONS -->
+<div class="actions">
+  <button class="back-btn">← Voltar</button>
+  <button class="next-btn">Próximo</button>
+</div>
+
+  </div>
+
+</div>
+
+<script src="wizard.js"></script>
+
+</body>
+</html>

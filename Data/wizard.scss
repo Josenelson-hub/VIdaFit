@@ -1,0 +1,399 @@
+// =====================
+// BASE
+// =====================
+body {
+  margin: 0;
+  font-family: "Inter", Arial, sans-serif;
+  background: #0b1220;
+  color: #fff;
+}
+
+// =====================
+// LAYOUT
+// =====================
+.wizard-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  gap: 24px;
+}
+
+// =====================
+// PROGRESS BAR
+// =====================
+.progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+
+  span {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #1b2a41;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #9fb0c7;
+    transition: 0.3s;
+  }
+
+  p {
+    font-size: 11px;
+    color: #6f7f95;
+  }
+
+  &.active {
+    span {
+      background: #4ade80;
+      color: #0b1220;
+      font-weight: bold;
+    }
+
+    p {
+      color: #fff;
+    }
+  }
+}
+
+.line {
+  width: 40px;
+  height: 2px;
+  background: #1b2a41;
+}
+
+// =====================
+// CARD
+// =====================
+.card {
+  width: 100%;
+  max-width: 540px;
+  background: linear-gradient(145deg, #111a2e, #0e1729);
+  border: 1px solid #1d2a44;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+// =====================
+// HEADER
+// =====================
+.header {
+  margin-bottom: 18px;
+
+  h2 {
+    margin: 0;
+    font-size: 22px;
+  }
+
+  p {
+    margin-top: 6px;
+    font-size: 13px;
+    color: #93a4bd;
+    line-height: 1.4;
+  }
+}
+
+// =====================
+// FORM GRID
+// =====================
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    font-size: 12px;
+    color: #93a4bd;
+    margin-bottom: 6px;
+  }
+
+  input,
+  select {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #24324a;
+    background: #0b1220;
+    color: #fff;
+    outline: none;
+    transition: 0.2s;
+
+    &:focus {
+      border-color: #4ade80;
+      box-shadow: 0 0 0 2px rgba(74, 222, 128, 0.15);
+    }
+  }
+}
+
+.full {
+  grid-column: span 2;
+}
+
+// =====================
+// BUTTON
+// =====================
+.next-btn {
+  margin-top: 18px;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #4ade80, #22c55e);
+  color: #0b1220;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 25px rgba(34, 197, 94, 0.25);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.objective-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.objective {
+  cursor: pointer;
+
+  input {
+    display: none;
+  }
+
+  .box {
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid #24324a;
+    background: #0b1220;
+    transition: 0.2s;
+  }
+
+  p {
+    margin: 4px 0 0;
+    font-size: 12px;
+    color: #93a4bd;
+  }
+
+  input:checked + .box {
+    border-color: #4ade80;
+    background: rgba(74, 222, 128, 0.08);
+    box-shadow: 0 0 0 2px rgba(74, 222, 128, 0.15);
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 18px;
+  gap: 12px;
+}
+
+.back-btn {
+  flex: 1;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #24324a;
+  background: transparent;
+  color: #93a4bd;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    border-color: #4ade80;
+    color: #fff;
+    background: rgba(74, 222, 128, 0.06);
+  }
+}
+
+.next-btn {
+  flex: 2;
+}
+
+.result-card {
+  margin-top: 10px;
+  padding: 18px;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #111a2e, #0e1729);
+  border: 1px solid #24324a;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.result-hero {
+  text-align: center;
+  margin-bottom: 18px;
+
+  h3 {
+    margin: 0;
+    font-size: 20px;
+  }
+
+  p {
+    margin-top: 6px;
+    font-size: 13px;
+    color: #93a4bd;
+  }
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.card-item {
+  padding: 12px;
+  border-radius: 12px;
+  background: #0b1220;
+  border: 1px solid #1d2a44;
+
+  span {
+    font-size: 11px;
+    color: #93a4bd;
+  }
+
+  strong {
+    display: block;
+    margin-top: 4px;
+    font-size: 16px;
+    color: #4ade80;
+  }
+}
+
+.result-footer {
+  margin-top: 12px;
+  font-size: 12px;
+  color: #93a4bd;
+
+  .hint {
+    margin-top: 6px;
+  }
+}
+
+.cta-btn {
+  width: 100%;
+  margin-top: 16px;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #4ade80, #22c55e);
+  color: #0b1220;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(34, 197, 94, 0.3);
+  }
+}
+
+.plans {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.plan {
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid #24324a;
+  background: #0b1220;
+  position: relative;
+  transition: 0.2s;
+
+  h4 {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  .price {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px 0;
+
+    span {
+      font-size: 12px;
+      color: #93a4bd;
+    }
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      font-size: 12px;
+      color: #93a4bd;
+      margin-bottom: 6px;
+    }
+  }
+
+  button {
+    margin-top: 12px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background: #1b2a41;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+      background: #24324a;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    border-color: #4ade80;
+  }
+}
+
+.highlight {
+  border: 1px solid #4ade80;
+  box-shadow: 0 0 0 2px rgba(74, 222, 128, 0.12);
+
+  .badge {
+    position: absolute;
+    top: -10px;
+    left: 12px;
+    background: #4ade80;
+    color: #0b1220;
+    font-size: 10px;
+    padding: 4px 8px;
+    border-radius: 999px;
+    font-weight: bold;
+  }
+}
+
+.cta-btn {
+  margin-top: 18px;
+}
