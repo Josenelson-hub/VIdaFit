@@ -199,7 +199,7 @@ function generate() {
 
     </div>
 
-    <button class="cta-btn">
+    <button class="next-btn">
       Continuar para assinatura →
     </button>
 
